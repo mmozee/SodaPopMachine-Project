@@ -12,7 +12,7 @@ namespace SodaPopMachine
         {
             name = "Dime";
             value = .10;
-            Value = 11.10;
+           
         }
     }
 }

@@ -12,7 +12,7 @@ namespace SodaPopMachine
         {
             name = "Quarter";
             value = .25;
-            Value = 3.75;
+            
 
         }
     }

@@ -12,7 +12,7 @@ namespace SodaPopMachine
         {
             name = "Nickel";
             value = .05;
-            Value = 2.05;
+            
         }
     }
 }

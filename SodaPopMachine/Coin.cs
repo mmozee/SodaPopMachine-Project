@@ -10,13 +10,19 @@ namespace SodaPopMachine
     public abstract class Coin
     {//member variable
         public string name;
-        protected double Value;
+        public double Value
+        {
+            get
+            {
+                return value;
+            }
+        }
         protected double value;
-        public List<Coin>register;
+        
 
         public Coin()
         {
-            register = new List<Coin>();
+            
         }
     }
 }

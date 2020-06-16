@@ -8,14 +8,15 @@ namespace SodaPopMachine
 {
     public abstract class Can
     {// member variable - Has A
-        public List<Can> inventory;
+       
         protected double cost;
         protected double Cost;
         protected string name;
-
+        
         public Can()
         {
-            inventory = new List<Can>();
+           
+            
             
 
         }

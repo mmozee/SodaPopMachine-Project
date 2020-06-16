@@ -12,7 +12,7 @@ namespace SodaPopMachine
         {
             name = "Penny";
             value = .01;
-            Value = 1.94;
+            
         }
     }
 }
