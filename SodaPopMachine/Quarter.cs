@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace SodaPopMachine
 {
-    class Quarter
+    public class Quarter:Coin
     {
+        public Quarter()
+        {
+            name = "Quarter";
+            value = .25;
+            Value = 3.75;
+
+        }
     }
 }

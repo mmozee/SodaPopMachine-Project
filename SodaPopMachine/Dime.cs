@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace SodaPopMachine
 {
-    class Dime
+    public class Dime:Coin
     {
+        public Dime()
+        {
+            name = "Dime";
+            value = .10;
+            Value = 11.10;
+        }
     }
 }

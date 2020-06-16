@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace SodaPopMachine
 {
-    class Cola
-    {
+    public class Cola:Can
+    {//member variable - Has A
+        public Cola()
+        {
+            cost = .35;
+            name = "Cola";
+            Cost = 3.50;
+
+        }
     }
 }

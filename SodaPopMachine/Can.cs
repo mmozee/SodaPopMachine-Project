@@ -5,13 +5,28 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SodaPopMachine
-{// member variable - Has A
-    class Can
-    {List<Coin>
+{
+    public abstract class Can
+    {// member variable - Has A
+        public List<Can> inventory;
+        protected double cost;
+        protected double Cost;
+        protected string name;
+
+        public Can()
+        {
+            inventory = new List<Can>();
+            
+
+        }
     }
+    
+    
+
+    
 }
 
-// constructor - Spawner
+
 
 
 // member methods - Can Do
