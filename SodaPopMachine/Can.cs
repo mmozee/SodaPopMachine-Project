@@ -10,7 +10,13 @@ namespace SodaPopMachine
     {// member variable - Has A
        
         protected double cost;
-        protected double Cost;
+        public double Cost
+        {
+            get
+            {
+                return cost;
+            }
+        }
         protected string name;
         
         public Can()

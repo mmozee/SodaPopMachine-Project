@@ -6,7 +6,22 @@ using System.Threading.Tasks;
 
 namespace SodaPopMachine
 {
-    class Customer
+    public class Customer
     {
+        public Customer()
+        {
+
+        }
+        public void FillBackpack()
+        {
+
+        }
     }
+
+
+    
+    
+        
+
+    
 }

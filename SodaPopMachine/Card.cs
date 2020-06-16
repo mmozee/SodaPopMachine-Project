@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace SodaPopMachine
 {
-    class Card
+    public class Card
     {
+        private double availableFunds;
+        public double AvailableFunds;
     }
 }

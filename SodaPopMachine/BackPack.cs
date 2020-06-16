@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace SodaPopMachine
 {
-    class BackPack
+    public class BackPack
     {
+        public List<Can> cans;
+
+        public BackPack()
+        {
+            cans = new List<Can>(0);
+        }
+       
     }
 }
