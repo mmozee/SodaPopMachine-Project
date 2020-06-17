@@ -59,6 +59,52 @@ namespace SodaPopMachine
             }
 
         }
+        public void Transaction()
+        {
+            Can SodaThatWasSelected = SelectSodaForPurchase();
+            DisplayCost(SodaThatWasSelected);
+        }
+        public Can SelectSodaForPurchase()
+        {
+            string chosenSoda = UserInterface.SelectSodaType();
+            for (int i = 0; i < inventory.Count; i++)
+            {
+                if(inventory[i].name  == chosenSoda)
+                {
+                    return inventory[i];
+                }
+            }
+            Console.WriteLine("We couldnt find that soda, Select Another?");
+
+            return SelectSodaForPurchase();
+            
+
+        }
+        public void DisplayCost(Can SodaToPurchase)
+        {
+            Console.WriteLine(SodaToPurchase.Cost);
+        }
+        public List<Coin> GetPayment()
+        {
+            
+        }
+        public void VerifyPayment()
+        {
+
+        }
+        public void RefundMoney()
+        {
+
+        }
+        public void GiveChange()
+        {
+
+        }
+        public void DispenseSoda()
+        {
+
+        }
+       
     }
     
             

@@ -17,7 +17,7 @@ namespace SodaPopMachine
                 return cost;
             }
         }
-        protected string name;
+        public string name;
         
         public Can()
         {

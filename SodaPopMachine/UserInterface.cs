@@ -9,12 +9,14 @@ namespace SodaPopMachine
 {
     public static class UserInterface
     {
-        static List<Coin> payment;
+        
         static List<Can> currentInventory;
-        static void SelectSodaType()
+        public static string SelectSodaType()
         {
-            Console.WriteLine($"Please select you soda - OrangeSoda, RootBeer, or Cola");
+            Console.WriteLine("Please select you soda - OrangeSoda, RootBeer, or Cola");
             string soda = Console.ReadLine();
+            return soda;
+
         }
        public static void WhatsInYourWallet()
         {
@@ -37,37 +39,15 @@ namespace SodaPopMachine
             int cSodasinBackpack = int.Parse(Console.ReadLine());
 
         }
-        public static void PickCoinsforSodaMachine()
+        public static void SelectCoins()
         {
             Console.WriteLine($"What Coins are you selecting for your soda purchase");
-            payment = new List<Coin>() { new Quarter(), new Dime(), new Nickel(), new Penny()};
-
-            for (int i = 0; i < 0; i++)
-            {
-                Coin quarter = new Quarter();
-                payment.Add(quarter);
-                
-            }
-            for (int i = 0; i < 0; i++)
-            {
-                Coin dime = new Dime();
-                payment.Add(dime);
-            }
-            for (int i = 0; i < 0; i++)
-            {
-                Coin nickel = new Nickel();
-                payment.Add(nickel);
-
-            }
-            for (int i = 0; i < 0; i++)
-            {
-                Coin penny = new Penny();
-                payment.Add(penny);
-            }
+            
+            
         }
         public static void LeftInSodaMachine()
         {
-            Console.WriteLine($"What ya getting{new OrangeSoda(),new RootBeer(), new Cola()}");
+            Console.WriteLine("What ya getting{OrangeSoda, RootBeer, Cola()");
 
             currentInventory = new List<Can>(){ new OrangeSoda(), new RootBeer(), new Cola()});
             {
@@ -86,10 +66,10 @@ namespace SodaPopMachine
                 {
                     Can cola = new Cola();
                     currentInventory.Remove(cola);
-                }
-            }
+                }  
+            }  
         }
-        
+        public static void 
 
 
 
