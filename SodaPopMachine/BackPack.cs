@@ -12,7 +12,7 @@ namespace SodaPopMachine
 
         public BackPack()
         {
-            cans = new List<Can>(0);
+            cans = new List<Can>(0){ new OrangeSoda(), new Cola(), new RootBeer()};
         }
        
     }

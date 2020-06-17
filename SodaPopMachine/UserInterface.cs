@@ -9,6 +9,7 @@ namespace SodaPopMachine
 {
     static class UserInterface
     {
+        static List<Coin> payment;
         static void SelectSodaType()
         {
             Console.WriteLine($"Please select you soda - OrangeSoda, RootBeer, or Cola");
@@ -35,6 +36,34 @@ namespace SodaPopMachine
             int cSodasinBackpack = int.Parse(Console.ReadLine());
 
         }
+        static void PickCoinsforSodaMachine()
+        {
+            Console.WriteLine($"What Coins are you selecting for your soda purchase");
+            payment = new List<Coin>() { new Quarter(), new Dime(), new Nickel(), new Penny()};
+
+            for (int i = 0; i < 0; i++)
+            {
+                Coin quarter = new Quarter();
+                payment.Add(quarter);
+                
+            }
+            for (int i = 0; i < 0; i++)
+            {
+                Coin dime = new Dime();
+                payment.Add(dime);
+            }
+            for (int i = 0; i < 0; i++)
+            {
+                Coin nickel = new Nickel();
+                payment.Add(nickel);
+
+            }
+            for (int i = 0; i < 0; i++)
+            {
+                Coin penny = new Penny();
+                payment.Add(penny);
+
+            }
         
 
 
