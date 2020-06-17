@@ -9,6 +9,8 @@ namespace SodaPopMachine
     public class SodaMachine
     {
         public List<Can> inventory;
+        
+
         public List<Coin> register;
         public SodaMachine()
         {
