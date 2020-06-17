@@ -12,7 +12,7 @@ namespace SodaPopMachine
         {
             cost = .06;
             name = "OrangeSoda";
-            Cost = .78;
+           
         }
     }
 }

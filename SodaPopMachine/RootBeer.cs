@@ -12,7 +12,7 @@ namespace SodaPopMachine
         {
             cost = .60;
             name = "RootBeer";
-            Cost = 4.20;
+            
 
         }
     }

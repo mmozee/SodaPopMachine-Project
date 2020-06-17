@@ -8,9 +8,13 @@ namespace SodaPopMachine
 {
     public class Customer
     {
+        public Wallet wallet;
+        public BackPack backPack;
+
         public Customer()
         {
-
+            wallet = new Wallet();
+            backPack = new BackPack();
         }
         public void FillBackpack()
         {
