@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SodaPopMachine;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,6 @@ namespace SodaPopMachine
     public class SodaMachine
     {
         public List<Can> inventory;
-       // static List<Coin> payment;
-
-
         public List<Coin> register;
         public SodaMachine()
         {
@@ -65,8 +63,10 @@ namespace SodaPopMachine
             Can SodaThatWasSelected = SelectSodaForPurchase();
             DisplayCost(SodaThatWasSelected);
             List<Coin> payment = GetPayment(customer);
-            VerifyPayment(payment);
-            
+            VerifyPayment(SodaThatWasSelected, payment);
+            GetMoneyForRefund(SodaThatWasSelected, payment, customer);
+
+
 
 
         }
@@ -81,19 +81,19 @@ namespace SodaPopMachine
                 }
 
             }
-            Console.WriteLine("We couldnt find that soda, Select Another?");
+            Console.WriteLine("We couldn't find that soda, Select Another?");
 
             return SelectSodaForPurchase();
             
 
         }
-        public List<Coin> DisplayCost(Can SodaToPurchase)
+        public void  DisplayCost(Can SodaToPurchase)
         {
-            List<Coin> display = new List<Coin>();
+          
             Console.WriteLine(SodaToPurchase.Cost);
-            return display;
+            
         }
-        public void GetCoinFromWallet(Customer customer,List<Coin> payment, string coinToGet)
+        public void GetCoinFromWallet(Customer customer,List<Coin> payment, string coinToGet)                 
         {
             for (int i = 0; i < customer.wallet.coins.Count; i++)
             {
@@ -106,6 +106,7 @@ namespace SodaPopMachine
                 }
             }   
         }
+        
         public List<Coin> GetPayment(Customer customer)
         {
             List<Coin> payment = new List<Coin>();
@@ -141,57 +142,57 @@ namespace SodaPopMachine
             }
             return payment;
 
-
-           
-
-
-
-            //Console.WriteLine($"Please deposit money in slot below");
-            //Console.WriteLine("How many quarters");
-            //double qCount = double.Parse(Console.ReadLine());
-            //double qChange = (qCount * .25);
-            //Console.WriteLine("How many dimes");
-            //double dCount = double.Parse(Console.ReadLine());
-            //double dChange = (dCount * .10);
-            //Console.WriteLine("How many nickels");
-            //double nCount = double.Parse(Console.ReadLine());
-            //double nChange = (nCount * .05);
-            //Console.WriteLine("How many pennies");
-            //double pCount = double.Parse(Console.ReadLine());
-            //double pChange = (pCount * .01);
-
-            //double tChangeCount = (qChange + dChange + nChange + pChange);
         }
-        public void VerifyPayment(List<Coin> payment, List<Coin> display,)
+        public void VerifyPayment(Can can, List<Coin> payment)
         {
             bool isPaymentCorrect = false;
             while (isPaymentCorrect)
             {
-                if (payment==display)
+                if (can.Cost <= GetTotalCoinListValue(payment))
                 {
-                    bool = true;
+                    isPaymentCorrect = true;
+                    Console.WriteLine("Your soda will dispense below");
+                    Console.ReadLine();
 
                 }
+                else
+                {
+                    isPaymentCorrect = false;
+                    Console.WriteLine("Please put on your glasses and try again Einstein");
+                }
             }
+
+        }
+        public double GetTotalCoinListValue(List<Coin> tcoin)
+        {
+            double totalValue = 0;
+            for (int i = 0; i < tcoin.Count; i++)
             {
-                GetCoinFromWallet
+                totalValue += tcoin[i].Value;
             }
-            
-                
+            return totalValue;
+        }
+        public void GetMoneyForRefund(Can can, List<Coin> payment, Customer customer)
+        {  
+            double refund = ( GetTotalCoinListValue(payment) - can.Cost);
+
+            if (can.Cost< GetTotalCoinListValue(payment))
+            {
+                Console.WriteLine($"You are due {refund}");
+                Console.ReadLine();
             }
-
-        }
-        public void RefundMoney()
+            for (int i = 0; i <customer.wallet.coins.Count; i++)
+            {              
+                payment.Add(customer.wallet.coins[i]);
+                break;                   
+            }    
+        }     
+        public void DispenseSoda(Can CanToDispense, Customer customer)
         {
-
-        }
-        public void GiveChange()
-        {
-
-        }
-        public void DispenseSoda()
-        {
-
+            Console.WriteLine("Payment is correct, Good Job! Have a soda");
+            Console.ReadLine();
+            inventory.Remove(CanToDispense);
+            customer.backPack.cans.Add(CanToDispense);
         }
        
     }
