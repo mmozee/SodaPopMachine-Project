@@ -9,7 +9,8 @@ namespace SodaPopMachine
     public class SodaMachine
     {
         public List<Can> inventory;
-        
+       // static List<Coin> payment;
+
 
         public List<Coin> register;
         public SodaMachine()
@@ -59,11 +60,12 @@ namespace SodaPopMachine
             }
 
         }
-        public void Transaction()
+        public void Transaction(Customer customer)
         {
             Can SodaThatWasSelected = SelectSodaForPurchase();
             DisplayCost(SodaThatWasSelected);
-            GetPayment;
+            List<Coin> payment = GetPayment(customer);
+            VerifyPayment(payment);
             
 
 
@@ -77,6 +79,7 @@ namespace SodaPopMachine
                 {
                     return inventory[i];
                 }
+
             }
             Console.WriteLine("We couldnt find that soda, Select Another?");
 
@@ -84,36 +87,96 @@ namespace SodaPopMachine
             
 
         }
-        public void DisplayCost(Can SodaToPurchase)
+        public List<Coin> DisplayCost(Can SodaToPurchase)
         {
+            List<Coin> display = new List<Coin>();
             Console.WriteLine(SodaToPurchase.Cost);
+            return display;
         }
-        public void GetPayment()
+        public void GetCoinFromWallet(Customer customer,List<Coin> payment, string coinToGet)
         {
-            Console.WriteLine($"Please deposit money in slot below");
-            Console.WriteLine("How many quarters");
-            double qCount = double.Parse(Console.ReadLine());
-            double qChange = (qCount * .25);
-            Console.WriteLine("How many dimes");
-            double dCount = double.Parse(Console.ReadLine());
-            double dChange = (dCount * .10);
-            Console.WriteLine("How many nickels");
-            double nCount = double.Parse(Console.ReadLine());
-            double nChange = (nCount * .05);
-            Console.WriteLine("How many pennies");
-            double pCount = double.Parse(Console.ReadLine());
-            double pChange = (pCount * .01);
-
-            double tChangeCount = (qChange + dChange + nChange + pChange);
-        }
-        public void VerifyPayment(double tChangeCount)
-        {
-            bool isInWallet = false;
-            while (isInWallet==false)
+            for (int i = 0; i < customer.wallet.coins.Count; i++)
             {
-                if(tChangeCount <= Wallet.);
+                if (customer.wallet.coins[i].name == coinToGet)
+                {
+                    Coin coinToPayWith = customer.wallet.coins[i];
+                    payment.Add(coinToPayWith);
+                    customer.wallet.coins.Remove(coinToPayWith);
+                    break;
+                }
+            }   
+        }
+        public List<Coin> GetPayment(Customer customer)
+        {
+            List<Coin> payment = new List<Coin>();
+
+            Console.WriteLine("How many quarters to add?");
+
+            int qCount = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < qCount; i++)
+            {
+                GetCoinFromWallet(customer, payment, "Quarter");
+            }
+            Console.WriteLine("How many dimes to add?");
+            int dCount = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < dCount; i++)
+            {
+                GetCoinFromWallet(customer, payment, "Dime");
+            }
+            Console.WriteLine("How many nickels to add?");
+            int nCount = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < nCount; i++)
+            {
+                GetCoinFromWallet(customer, payment, "Nickel");
+            }
+            Console.WriteLine("How many pennies to add?");
+            int pCount = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < pCount; i++)
+            {
+                GetCoinFromWallet(customer, payment, "Penny");
+            }
+            return payment;
+
+
+           
+
+
+
+            //Console.WriteLine($"Please deposit money in slot below");
+            //Console.WriteLine("How many quarters");
+            //double qCount = double.Parse(Console.ReadLine());
+            //double qChange = (qCount * .25);
+            //Console.WriteLine("How many dimes");
+            //double dCount = double.Parse(Console.ReadLine());
+            //double dChange = (dCount * .10);
+            //Console.WriteLine("How many nickels");
+            //double nCount = double.Parse(Console.ReadLine());
+            //double nChange = (nCount * .05);
+            //Console.WriteLine("How many pennies");
+            //double pCount = double.Parse(Console.ReadLine());
+            //double pChange = (pCount * .01);
+
+            //double tChangeCount = (qChange + dChange + nChange + pChange);
+        }
+        public void VerifyPayment(List<Coin> payment, List<Coin> display,)
+        {
+            bool isPaymentCorrect = false;
+            while (isPaymentCorrect)
+            {
+                if (payment==display)
+                {
+                    bool = true;
+
+                }
             }
             {
+                GetCoinFromWallet
+            }
+            
                 
             }
 

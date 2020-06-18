@@ -11,7 +11,7 @@ namespace SodaPopMachine
     {
         public Wallet wallet;
         public BackPack backPack;
-        static List<Coin> payment;
+        
         static List<Can> cans;
 
         public Customer()
@@ -68,31 +68,6 @@ namespace SodaPopMachine
         //    }
 
 
-        //    payment = new List<Coin>() { new Quarter(), new Dime(), new Nickel(), new Penny() };
-
-        //    for (int i = 0; i < 0; i++)
-        //    {
-        //        Coin quarter = new Quarter();
-        //        payment.Add(quarter);
-
-        //    }
-        //    for (int i = 0; i < 0; i++)
-        //    {
-        //        Coin dime = new Dime();
-        //        payment.Add(dime);
-        //    }
-        //    for (int i = 0; i < 0; i++)
-        //    {
-        //        Coin nickel = new Nickel();
-        //        payment.Add(nickel);
-
-        //    }
-        //    for (int i = 0; i < 0; i++)
-        //    {
-        //        Coin penny = new Penny();
-        //        payment.Add(penny);
-        //    }
-        //}
         
             
 

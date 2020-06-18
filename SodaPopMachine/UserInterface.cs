@@ -9,7 +9,7 @@ namespace SodaPopMachine
 {
     public static class UserInterface
     {
-        
+
         static List<Can> currentInventory;
         public static string SelectSodaType()
         {
@@ -18,7 +18,7 @@ namespace SodaPopMachine
             return soda;
 
         }
-       public static void WhatsInYourWallet()
+        public static void WhatsInYourWallet()
         {
             Console.WriteLine($"How much in Quarters do you have in your Wallet");
             double quartersInWallet = double.Parse(Console.ReadLine());
@@ -42,14 +42,14 @@ namespace SodaPopMachine
         public static void SelectCoins()
         {
             Console.WriteLine($"What Coins are you selecting for your soda purchase");
-            
-            
+
+
         }
         public static void LeftInSodaMachine()
         {
             Console.WriteLine("What ya getting{OrangeSoda, RootBeer, Cola()");
 
-            currentInventory = new List<Can>(){ new OrangeSoda(), new RootBeer(), new Cola()});
+            currentInventory = new List<Can>() { new OrangeSoda(), new RootBeer(), new Cola() };
             {
                 for (int i = 0; i < 5; i--)
                 {
@@ -66,14 +66,15 @@ namespace SodaPopMachine
                 {
                     Can cola = new Cola();
                     currentInventory.Remove(cola);
-                }  
-            }  
+                }
+            }
         }
-        public static void 
+      
 
 
 
 
-        
     }
+
+    
 }
