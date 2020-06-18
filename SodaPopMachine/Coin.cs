@@ -17,7 +17,7 @@ namespace SodaPopMachine
                 return value;
             }
         }
-        protected double value;
+        public double value;
         
 
         public Coin()

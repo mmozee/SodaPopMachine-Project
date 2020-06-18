@@ -63,6 +63,10 @@ namespace SodaPopMachine
         {
             Can SodaThatWasSelected = SelectSodaForPurchase();
             DisplayCost(SodaThatWasSelected);
+            GetPayment;
+            
+
+
         }
         public Can SelectSodaForPurchase()
         {
@@ -84,12 +88,34 @@ namespace SodaPopMachine
         {
             Console.WriteLine(SodaToPurchase.Cost);
         }
-        public List<Coin> GetPayment()
+        public void GetPayment()
         {
-            
+            Console.WriteLine($"Please deposit money in slot below");
+            Console.WriteLine("How many quarters");
+            double qCount = double.Parse(Console.ReadLine());
+            double qChange = (qCount * .25);
+            Console.WriteLine("How many dimes");
+            double dCount = double.Parse(Console.ReadLine());
+            double dChange = (dCount * .10);
+            Console.WriteLine("How many nickels");
+            double nCount = double.Parse(Console.ReadLine());
+            double nChange = (nCount * .05);
+            Console.WriteLine("How many pennies");
+            double pCount = double.Parse(Console.ReadLine());
+            double pChange = (pCount * .01);
+
+            double tChangeCount = (qChange + dChange + nChange + pChange);
         }
-        public void VerifyPayment()
+        public void VerifyPayment(double tChangeCount)
         {
+            bool isInWallet = false;
+            while (isInWallet==false)
+            {
+                if(tChangeCount <= Wallet.);
+            }
+            {
+                
+            }
 
         }
         public void RefundMoney()
